@@ -1,0 +1,22 @@
+Train,Depart time,Travel time,Arrive time,Coach from,Business form,Rooms from
+California Zephyr,9:10a,"51h 40m
+Direct","2:50p
+Fri, Apr 8",$141,,$804
+Mixed Service,7:46a,"53h 4m
+3 Segment","2:50p
+Fri, Apr 8",$281,,$1082
+Mixed Service,7:46a,"53h 4m
+3 Segment","2:50p
+Fri, Apr 8",$281,,$1082
+Mixed Service,11:46a,"73h 35m
+3 Segment","3:21p
+Sat, Apr 9",$197,,
+Mixed Service,9:46a,"75h 35m
+3 Segment","3:21p
+Sat, Apr 9",$197,,
+Mixed Service,9:46a,"75h 35m
+3 Segment","3:21p
+Sat, Apr 9",$197,,
+Multiple Trains,8:39a,"76h 42m
+2 Segment","3:21p
+Sat, Apr 9",$200,$246,$348
