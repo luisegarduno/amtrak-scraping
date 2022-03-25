@@ -211,5 +211,5 @@ if __name__ == '__main__':
         dict_writer.writerows(opt_results)
         writer = csv.writer(best_file)
         writer.writerow(prompt)
-        dict_writer.writerows(min_dates)
+        dict_wrter.writerows(min_dates)
 
