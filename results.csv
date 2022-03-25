@@ -1,22 +1,235 @@
-Train,Depart time,Travel time,Arrive time,Coach from,Business form,Rooms from
-California Zephyr,9:10a,"51h 40m
-Direct","2:50p
-Fri, Apr 8",$141,,$804
-Mixed Service,7:46a,"53h 4m
-3 Segment","2:50p
-Fri, Apr 8",$281,,$1082
-Mixed Service,7:46a,"53h 4m
-3 Segment","2:50p
-Fri, Apr 8",$281,,$1082
-Mixed Service,11:46a,"73h 35m
-3 Segment","3:21p
-Sat, Apr 9",$197,,
-Mixed Service,9:46a,"75h 35m
-3 Segment","3:21p
-Sat, Apr 9",$197,,
-Mixed Service,9:46a,"75h 35m
-3 Segment","3:21p
-Sat, Apr 9",$197,,
-Multiple Trains,8:39a,"76h 42m
-2 Segment","3:21p
-Sat, Apr 9",$200,$246,$348
+Date,Train,Depart time,Travel time,Arrive time,Coach from,Business from,Rooms from
+6/29/2022,3 Southwest Chief,2:50p,"43h 10m
+Direct","8:00a
+Fri, Jul 1",$292,None,$1131
+6/29/2022,Mixed Service,2:00p,"62h 15m
+3 Segment","2:15a
+Sat, Jul 2",$388,None,$1380
+6/29/2022,Mixed Service,2:00p,"62h 15m
+4 Segment","2:15a
+Sat, Jul 2",$394,None,$1369
+6/29/2022,Mixed Service,2:15p,"76h 20m
+5 Segment","4:35p
+Sat, Jul 2",$534,$612,$2041
+6/29/2022,Mixed Service,2:15p,"76h 20m
+5 Segment","4:35p
+Sat, Jul 2",$534,$612,$2041
+6/29/2022,Mixed Service,2:15p,"76h 20m
+5 Segment","4:35p
+Sat, Jul 2",$534,$612,$2041
+6/29/2022,Multiple Trains,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$2197
+6/30/2022,3 Southwest Chief,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$1131
+6/30/2022,Mixed Service,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$1367
+6/30/2022,Mixed Service,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$1348
+6/30/2022,Mixed Service,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$1540
+6/30/2022,Mixed Service,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$1540
+6/30/2022,Mixed Service,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$1540
+6/30/2022,Multiple Trains,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$1696
+7/1/2022,3 Southwest Chief,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$1274
+7/1/2022,421 Texas Eagle,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$1417
+7/1/2022,Mixed Service,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$1367
+7/1/2022,Mixed Service,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$1348
+7/1/2022,Multiple Trains,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$1009
+7/1/2022,Mixed Service,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$2005
+7/1/2022,Mixed Service,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$2005
+7/1/2022,Mixed Service,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$2005
+7/1/2022,Multiple Trains,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$2118
+7/2/2022,3 Southwest Chief,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$1417
+7/2/2022,Mixed Service,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$1391
+7/2/2022,Mixed Service,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$1369
+7/2/2022,Mixed Service,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$2041
+7/2/2022,Mixed Service,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$2041
+7/2/2022,Mixed Service,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$2041
+7/2/2022,Multiple Trains,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$2197
+7/3/2022,3 Southwest Chief,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$1131
+7/3/2022,421 Texas Eagle,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$1274
+7/3/2022,Mixed Service,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$1367
+7/3/2022,Mixed Service,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$1348
+7/3/2022,Multiple Trains,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$758
+7/3/2022,Mixed Service,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$2041
+7/3/2022,Mixed Service,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$2041
+7/3/2022,Mixed Service,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$2041
+7/3/2022,Multiple Trains,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$2197
+7/4/2022,3 Southwest Chief,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$1417
+7/4/2022,Mixed Service,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$1367
+7/4/2022,Mixed Service,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$1348
+7/4/2022,Mixed Service,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$2041
+7/4/2022,Mixed Service,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$2041
+7/4/2022,Mixed Service,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$2041
+7/4/2022,Multiple Trains,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$2197
+7/5/2022,3 Southwest Chief,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$1417
+7/5/2022,421 Texas Eagle,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$1274
+7/5/2022,Mixed Service,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$1367
+7/5/2022,Mixed Service,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$1348
+7/5/2022,Multiple Trains,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$1009
+7/5/2022,Mixed Service,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$2041
+7/5/2022,Mixed Service,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$2041
+7/5/2022,Mixed Service,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$2041
+7/5/2022,Multiple Trains,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$2197
+7/6/2022,3 Southwest Chief,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$1274
+7/6/2022,Mixed Service,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$1367
+7/6/2022,Mixed Service,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$1348
+7/6/2022,Mixed Service,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$2041
+7/6/2022,Mixed Service,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$2041
+7/6/2022,Mixed Service,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$2041
+7/6/2022,Multiple Trains,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$2197
+7/7/2022,3 Southwest Chief,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$1853
+7/7/2022,Mixed Service,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$1119
+7/7/2022,Mixed Service,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$1100
+7/7/2022,Mixed Service,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$1540
+7/7/2022,Mixed Service,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$1540
+7/7/2022,Mixed Service,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$1540
+7/7/2022,Multiple Trains,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$1696
+7/8/2022,3 Southwest Chief,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$1131
+7/8/2022,421 Texas Eagle,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$1274
+7/8/2022,Mixed Service,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$1367
+7/8/2022,Mixed Service,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$1348
+7/8/2022,Multiple Trains,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$1009
+7/8/2022,Mixed Service,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$2041
+7/8/2022,Mixed Service,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$2041
+7/8/2022,Mixed Service,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$2041
+7/8/2022,Multiple Trains,2:15p,"80h 56m
+2 Segment","9:11p
+Sat, Jul 2",$498,$612,$2197

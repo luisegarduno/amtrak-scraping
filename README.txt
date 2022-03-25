@@ -3,4 +3,4 @@
     . python -m pip install --upgrade pip (upgrade pip)
     . pip install -r requirements.txt (install requirements)
 3. Run the script:
-    . python amtrak.py -a from=EMY, to=CHi, date=2022-04-06 (example)
+python amtrak.py -a from=SEA to=CHI start_date=2022-07-29 end_date=2022-07-30 people=2
