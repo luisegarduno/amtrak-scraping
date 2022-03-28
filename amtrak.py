@@ -76,7 +76,6 @@ if __name__ == '__main__':
     elements = driver.find_elements(By.CSS_SELECTOR, '.search-results-leg')
     results = []
     opt_results = []
-    multiple_trains = []
 
     def enter_a_date(the_date):
         driver.find_element(By.CSS_SELECTOR, '.refine-search-btn.ng-star-inserted > button').click()
@@ -97,10 +96,10 @@ if __name__ == '__main__':
             depart = element.find_element(By.CSS_SELECTOR, '.departure-inner .font-light').text
             depart += element.find_element(By.CSS_SELECTOR, '.departure-inner .time-period').text
             travel_elements = element.find_elements(By.CSS_SELECTOR, '.travel-time .text-center')
-            travel_time = '\n'.join([e.text for e in travel_elements])
+            travel_time = ' '.join([e.text for e in travel_elements])
             arrive = element.find_element(By.CSS_SELECTOR, '.arrival-inner .font-light').text
             arrive += element.find_element(By.CSS_SELECTOR, '.arrival-inner .time-period').text
-            arrive += '\n' + element.find_element(By.CSS_SELECTOR, '.travel-next-day span').text
+            arrive += element.find_element(By.CSS_SELECTOR, '.travel-next-day span').text
             try:
                 coach_from = element.find_element(By.CSS_SELECTOR, '.text-center:nth-child(1) .amount').text
             except:
@@ -113,12 +112,28 @@ if __name__ == '__main__':
                 rooms_from = element.find_element(By.CSS_SELECTOR, '.text-center:nth-child(3) .amount').text
             except:
                 rooms_from = 'None'
-            data = {'Date': new_date, 'Train': train, 'Depart time': depart, 'Travel time': travel_time, 'Arrive time': arrive,
-                    'Coach from': coach_from, 'Business from': business_from, 'Rooms from': rooms_from}
+            # help needed below
+            if train == "Multiple Trains":
+                multiple_trains = []
+                # Click on the 'Trip Details' button for each item that is listed as 'Multiple Trains'
+                element.find_element(By.CSS_SELECTOR, '.arrival-inner .details-dropdown.mt-2 .ng-tns-c4-15').click()
+                # ^^^^ gives random errors
+                element.find_element(By.CSS_SELECTOR, 'ul > li:nth-child(2) > a').click() # clicks the "Services" button
+                time.sleep(1)
+
+                train = ', '.join([train for train in multiple_trains])
+                # the list multiple_trains should look like ['8 Empire Builder', '14 Coast Starlight']
+                # 'train' should be replaced with a list of the names of multiple trains, for example,
+                # '8 Empire Builder, 14 Coast Starlight' instead of 'Multiple Trains'
+                # unless there is another better way to do this
+
+            data = {'Date': new_date, 'Train': train, 'Depart time': depart, 'Travel time': travel_time,
+                    'Arrive time': arrive, 'Coach from': coach_from, 'Business from': business_from,
+                    'Rooms from': rooms_from}
             results.append(data)
             if train != "Mixed Service":
                 if rooms_from != 'None':
-                    opt_data = {'Date': new_date, ' Train': " " + train, ' Rooms/First from': " " + rooms_from}  # create optimized data list
+                    opt_data = {'Date': new_date, ' Train': " " + train, ' Rooms/First from': " " + rooms_from}
                     opt_results.append(opt_data)
                 if rooms_from == 'None':
                     opt_data = {'Date': new_date, ' Train': " " + train, ' Rooms/First from': " " + business_from}
@@ -130,7 +145,7 @@ if __name__ == '__main__':
     new_day = int(start_day)
     new_month = int(start_month)
     new_year = int(start_year)
-    while new_date != end_date:
+    while new_date != end_date and start_date != end_date:
         new_day = new_day + 1
         if new_day > 28 and new_year % 4 != 0 and new_month == 2:  # checks feb
             new_day = 1
@@ -157,11 +172,13 @@ if __name__ == '__main__':
     min_list = []
     min_dates = []
     for i in range(0, len(opt_results)):
-        min_list.append(int(opt_results[i][' Rooms/First from'].replace("$", "")))
+        if opt_results[i][' Rooms/First from'] != ' None':
+            min_list.append(int(opt_results[i][' Rooms/First from'].replace("$", "")))
     min_value = min(min_list)
     for data_set in opt_results:
-        if int(data_set[' Rooms/First from'].replace("$", "")) == min_value:
-            min_dates.append(data_set)
+        if data_set[' Rooms/First from'] != ' None':
+            if int(data_set[' Rooms/First from'].replace("$", "")) == min_value:
+                min_dates.append(data_set)
 
     # Save results in a csv flie
     keys = results[0].keys()
@@ -180,11 +197,3 @@ if __name__ == '__main__':
         writer.writerow(prompt)
         dict_writer.writerows(min_dates)
 
-"""if train == "Multiple Trains":
-    element.find_element(By.CSS_SELECTOR, '.details-dropdown.mt-2').click()
-    element.find_element(By.CSS_SELECTOR, 'ul > li:nth-child(2) > a').click()
-    time.sleep(3)
-    multiple_trains.append(element.find_element(By.CSS_SELECTOR, '.tab-pane > div:nth-child(1) .row.segment-details.ng-star-inserted .travel-type .travel-type-service > span > span').text)
-    multiple_trains.append(element.find_element(By.CSS_SELECTOR, '.tab-pane > div:nth-child(2) .row.segment-details.ng-star-inserted .travel-type .travel-type-service > span > span').text)
-    print(multiple_trains)
-    train = ', '.join([i for i in multiple_trains])"""

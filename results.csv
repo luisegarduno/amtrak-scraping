@@ -1,55 +1,8 @@
 Date,Train,Depart time,Travel time,Arrive time,Coach from,Business from,Rooms from
-6/1/2022,5 California Zephyr,2:00p,"52h 10m
-Direct","4:10p
-Fri, Jun 3",$282,None,$1276
-6/1/2022,Mixed Service,2:50p,"53h 25m
-3 Segment","6:15p
-Fri, Jun 3",$393,None,$1353
-6/1/2022,Mixed Service,2:50p,"53h 25m
-3 Segment","6:15p
-Fri, Jun 3",$393,None,$1353
-6/1/2022,Multiple Trains,2:50p,"56h 47m
-2 Segment","9:37p
-Fri, Jun 3",$400,$464,$1668
-6/1/2022,Multiple Trains,2:15p,"68h 14m
-2 Segment","8:29a
-Sat, Jun 4",$452,$538,$1830
-6/2/2022,5 California Zephyr,2:00p,"52h 10m
-Direct","4:10p
-Sat, Jun 4",$282,None,$1276
-6/2/2022,Mixed Service,2:50p,"53h 25m
-3 Segment","6:15p
-Sat, Jun 4",$393,None,$1210
-6/2/2022,Mixed Service,2:50p,"53h 25m
-3 Segment","6:15p
-Sat, Jun 4",$393,None,$1210
-6/2/2022,Multiple Trains,2:50p,"56h 47m
-2 Segment","9:37p
-Sat, Jun 4",$400,$464,$1561
-6/2/2022,Multiple Trains,2:15p,"68h 14m
-2 Segment","8:29a
-Sun, Jun 5",$1182,$1058,$1914
-6/3/2022,5 California Zephyr,2:00p,"52h 10m
-Direct","4:10p
-Sun, Jun 5",$282,None,$1276
-6/3/2022,Mixed Service,2:50p,"53h 25m
-3 Segment","6:15p
-Sun, Jun 5",$393,None,$1353
-6/3/2022,Mixed Service,2:50p,"53h 25m
-3 Segment","6:15p
-Sun, Jun 5",$393,None,$1353
-6/3/2022,Multiple Trains,2:50p,"56h 47m
-2 Segment","9:37p
-Sun, Jun 5",$400,$464,$1704
-6/3/2022,Multiple Trains,2:15p,"68h 14m
-2 Segment","8:29a
-Mon, Jun 6",$1182,$1058,$1971
-6/3/2022,Mixed Service,1:45p,"78h 30m
-3 Segment","6:15p
-Mon, Jun 6",$393,None,$1496
-6/3/2022,Mixed Service,1:45p,"78h 30m
-3 Segment","6:15p
-Mon, Jun 6",$393,None,$1496
-6/3/2022,Multiple Trains,11:55a,"83h 42m
-2 Segment","9:37p
-Mon, Jun 6",$400,$464,$1847
+6/1/2022,3 Southwest Chief,2:50p,43h 10m Direct,"8:00aFri, Jun 3",$292,None,$1274
+6/1/2022,Mixed Service,2:00p,62h 15m 3 Segment,"2:15aSat, Jun 4",$375,None,$1367
+6/1/2022,Mixed Service,2:00p,62h 15m 4 Segment,"2:15aSat, Jun 4",$360,None,$1348
+6/1/2022,Mixed Service,2:15p,76h 20m 5 Segment,"4:35pSat, Jun 4",$534,$612,$1900
+6/1/2022,Mixed Service,2:15p,76h 20m 5 Segment,"4:35pSat, Jun 4",$534,$612,$1900
+6/1/2022,Mixed Service,2:15p,76h 20m 5 Segment,"4:35pSat, Jun 4",$534,$612,$1900
+6/1/2022,Multiple Trains,2:15p,80h 56m 2 Segment,"9:11pSat, Jun 4",$498,$612,$2056
