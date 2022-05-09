@@ -1,4 +1,5 @@
 # Importing libraries
+from turtle import title
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
@@ -41,10 +42,7 @@ if __name__ == '__main__':
     actions = ActionChains(driver)
 
     # Open website
-    website_url = 'https://www.amtrak.com/home.html'
-    driver.get(website_url)
-    # Accept cookies
-    actions.send_keys(Keys.ENTER).perform()
+    website_url = 'https://www.amtrak.com/planning-booking/policies/cookie-policy.html'
     driver.get(website_url)
 
     # Get search queries
@@ -60,8 +58,12 @@ if __name__ == '__main__':
     end_date = '/'.join([str(int(end_month)), str(int(end_day)), str(int(end_year))])
 
     p = int(args.get('people'))
+    trains_only = args.get('trains_only')
+    specify = args.get('specify')
 
     # Fill inputs
+    time.sleep(3)
+    driver.find_element(By.CSS_SELECTOR, '.show-navbar .site-secondary-nav__li_link_text').click()
     driver.find_element(By.CSS_SELECTOR, '#mat-input-0').send_keys(from_)
     driver.find_element(By.CSS_SELECTOR, '#mat-input-1').send_keys(to_)
     driver.find_element(By.CSS_SELECTOR, '#mat-input-2').send_keys(start_date)
@@ -69,75 +71,109 @@ if __name__ == '__main__':
     while p > 1:
         driver.find_element(By.CSS_SELECTOR, '.increment').click()
         p -= 1
-    driver.find_element(By.CSS_SELECTOR, '.pl-lg-3').click()
     time.sleep(1)
+    driver.find_element(By.CSS_SELECTOR, '.col-12 .ml-2').click()
+    driver.find_element(By.CSS_SELECTOR, '.pl-lg-3').click()
+    time.sleep(2)
+    # solve person count errors
+    if driver.find_element(By.CSS_SELECTOR, '.traveler-number').text != args.get('people'):
+        p = int(args.get('people'))
+        driver.find_element(By.CSS_SELECTOR, '.refine-search-btn.ng-star-inserted > button').click()
+        time.sleep(1)
+        driver.find_element(By.CSS_SELECTOR, '.t-title').click()
+        while p > 1:
+            driver.find_element(By.CSS_SELECTOR, '.increment').click()
+            p -= 1
+        time.sleep(1)
+        driver.find_element(By.CSS_SELECTOR, '.col-12 .ml-2').click()
+        driver.find_element(By.CSS_SELECTOR, '.pl-lg-3').click()
+        time.sleep(2)
 
-
-    elements = driver.find_elements(By.CSS_SELECTOR, '.search-results-leg')
     results = []
     opt_results = []
 
     def enter_a_date(the_date):
+        actions.send_keys(Keys.ARROW_UP * 30).perform()
+        time.sleep(1)
         driver.find_element(By.CSS_SELECTOR, '.refine-search-btn.ng-star-inserted > button').click()
         time.sleep(1)
         driver.find_element(By.CSS_SELECTOR, '#mat-input-2').send_keys(Keys.BACKSPACE * 10)
         driver.find_element(By.CSS_SELECTOR, '#mat-input-2').send_keys(the_date)
         driver.find_element(By.CSS_SELECTOR, '.pl-lg-3').click()
-        time.sleep(2)
+        time.sleep(1)
 
-    def get_results_for_a_date(): #Gets results for all of the following days
-        elements = driver.find_elements(By.CSS_SELECTOR, '.search-results-leg')
-        for element in elements:
+    def get_results_for_a_date(): # Gets results for all of the following days
+        trains = driver.find_elements(By.CSS_SELECTOR, '.search-results-leg')
+        for train in trains:
             try:
-                train = element.find_element(By.CSS_SELECTOR, '.pt-1.ng-star-inserted span').text + ' ' + \
-                        element.find_elements(By.CSS_SELECTOR, '.handpointer')[1].text
+                title = train.find_element(By.CSS_SELECTOR, '.pt-1.ng-star-inserted span').text + ' ' + \
+                        train.find_elements(By.CSS_SELECTOR, '.handpointer')[1].text
             except:
-                train = element.find_element(By.CSS_SELECTOR, '.pt-1.ng-star-inserted span').text
-            depart = element.find_element(By.CSS_SELECTOR, '.departure-inner .font-light').text
-            depart += element.find_element(By.CSS_SELECTOR, '.departure-inner .time-period').text
-            travel_elements = element.find_elements(By.CSS_SELECTOR, '.travel-time .text-center')
+                title = train.find_element(By.CSS_SELECTOR, '.pt-1.ng-star-inserted span').text
+            depart = train.find_element(By.CSS_SELECTOR, '.departure-inner .font-light').text
+            depart += train.find_element(By.CSS_SELECTOR, '.departure-inner .time-period').text
+            travel_elements = train.find_elements(By.CSS_SELECTOR, '.travel-time .text-center')
             travel_time = ' '.join([e.text for e in travel_elements])
-            arrive = element.find_element(By.CSS_SELECTOR, '.arrival-inner .font-light').text
-            arrive += element.find_element(By.CSS_SELECTOR, '.arrival-inner .time-period').text
-            arrive += element.find_element(By.CSS_SELECTOR, '.travel-next-day span').text
+            arrive = train.find_element(By.CSS_SELECTOR, '.arrival-inner .font-light').text
+            arrive += train.find_element(By.CSS_SELECTOR, '.arrival-inner .time-period').text
+            arrive += train.find_element(By.CSS_SELECTOR, '.travel-next-day span').text
             try:
-                coach_from = element.find_element(By.CSS_SELECTOR, '.text-center:nth-child(1) .amount').text
+                coach_from = train.find_element(By.CSS_SELECTOR, '.text-center:nth-child(1) .amount').text
             except:
                 coach_from = 'None'
             try:
-                business_from = element.find_element(By.CSS_SELECTOR, '.text-center:nth-child(2) .amount').text
+                business_from = train.find_element(By.CSS_SELECTOR, '.text-center:nth-child(2) .amount').text
             except:
                 business_from = 'None'
             try:
-                rooms_from = element.find_element(By.CSS_SELECTOR, '.text-center:nth-child(3) .amount').text
+                rooms_from = train.find_element(By.CSS_SELECTOR, '.text-center:nth-child(3) .amount').text
             except:
                 rooms_from = 'None'
-            # help needed below
-            if train == "Multiple Trains":
-                multiple_trains = []
-                # Click on the 'Trip Details' button for each item that is listed as 'Multiple Trains'
-                element.find_element(By.CSS_SELECTOR, '.arrival-inner .details-dropdown.mt-2 .ng-tns-c4-15').click()
-                # ^^^^ gives random errors
-                element.find_element(By.CSS_SELECTOR, 'ul > li:nth-child(2) > a').click() # clicks the "Services" button
-                time.sleep(1)
+            def grab_names():
+                if specify == 'True':
+                    Trip_Details = train.find_element(By.CSS_SELECTOR, '.dropdown-toggle span')
+                    while True:
+                        try:
+                            Trip_Details.click()
+                            train.find_element(By.XPATH, '//*[contains(text(), "Services")]').click()
+                            break
+                        except:
+                            actions.move_to_element(train.find_element(By.CSS_SELECTOR, '.departure-inner .font-light'))
+                            actions.click()
+                            actions.send_keys(Keys.ARROW_DOWN * 20)
+                            actions.perform()
+                            continue
+                    services = train.find_elements(By.CSS_SELECTOR, '.dropdown-container .travel-type-service')
+                    if len(services) == 0:
+                        train_names = title
+                    else:
+                        train_names = []
+                        for segment in services:
+                            a = segment.text.replace('\n', ' ')
+                            a = a.replace('Operated by Amtrak Chartered Motorcoach ', '')
+                            train_names.append(a)
+                        train_names = ', '.join(train_names)
+                    actions.send_keys(Keys.ESCAPE).perform()
+                else:
+                    train_names = title
+                data = {'Title': title, 'Date': new_date, 'Depart time': depart, 'Travel time': travel_time, 'Arrive time': arrive,
+                        'Coach from': coach_from, 'Business from': business_from, 'Rooms from': rooms_from,
+                        'Train names': train_names}
+                results.append(data)
 
-                train = ', '.join([train for train in multiple_trains])
-                # the list multiple_trains should look like ['8 Empire Builder', '14 Coast Starlight']
-                # 'train' should be replaced with a list of the names of multiple trains, for example,
-                # '8 Empire Builder, 14 Coast Starlight' instead of 'Multiple Trains'
-                # unless there is another better way to do this
-
-            data = {'Date': new_date, 'Train': train, 'Depart time': depart, 'Travel time': travel_time,
-                    'Arrive time': arrive, 'Coach from': coach_from, 'Business from': business_from,
-                    'Rooms from': rooms_from}
-            results.append(data)
-            if train != "Mixed Service":
                 if rooms_from != 'None':
-                    opt_data = {'Date': new_date, ' Train': " " + train, ' Rooms/First from': " " + rooms_from}
+                    opt_data = {'Date': new_date, ' Trains': " " + train_names, ' Rooms/First from': " " + rooms_from}
                     opt_results.append(opt_data)
                 if rooms_from == 'None':
-                    opt_data = {'Date': new_date, ' Train': " " + train, ' Rooms/First from': " " + business_from}
+                    opt_data = {'Date': new_date, ' Trains': " " + train_names, ' Rooms/First from': " " + business_from}
                     opt_results.append(opt_data)
+
+            if trains_only == 'False':
+                grab_names()
+            elif trains_only == 'True' and title != 'Mixed Service':
+                grab_names()
+            else:
+                pass
 
     new_date = start_date
     get_results_for_a_date()
