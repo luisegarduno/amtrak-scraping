@@ -124,12 +124,12 @@ if __name__ == '__main__':
         except:
             alert = False
         if alert == True:
-            data = {'Title': ' Sold out', 'Date': new_date, 'Depart time': ' Sold out', 'Travel time': ' Sold out',
-                    'Arrive time': ' Sold out',
-                    'Coach from': ' Sold out', 'Business from': ' Sold out', 'Rooms from': ' Sold out',
-                    'Train names': ' Sold out'}
+            data = {'Title': 'Sold out', 'Date': new_date, 'Depart time': 'Sold out', 'Travel time': 'Sold out',
+                    'Arrive time': 'Sold out',
+                    'Coach from': 'Sold out', 'Business from': 'Sold out', 'Rooms from': 'Sold out',
+                    'Train names': 'Sold out'}
             results.append(data)
-            opt_data = {'Date': new_date, ' Trains': ' Sold out', ' Rooms/First from': ' Sold out'}
+            opt_data = {'Date': new_date, 'Trains': 'Sold out', 'Rooms/First from': 'Sold out'}
             opt_results.append(opt_data)
         else:
             trains = driver.find_elements(By.CSS_SELECTOR, '.search-results-leg')
@@ -145,6 +145,7 @@ if __name__ == '__main__':
                 travel_time = ' '.join([e.text for e in travel_elements])
                 arrive = train.find_element(By.CSS_SELECTOR, '.arrival-inner .font-light').text
                 arrive += train.find_element(By.CSS_SELECTOR, '.arrival-inner .time-period').text
+                arrive += ' '
                 arrive += train.find_element(By.CSS_SELECTOR, '.travel-next-day span').text
                 try:
                     coach_from = train.find_element(By.CSS_SELECTOR, '.text-center:nth-child(1) .amount').text
@@ -197,10 +198,10 @@ if __name__ == '__main__':
                     results.append(data)
 
                     if rooms_from != 'None':
-                        opt_data = {'Date': new_date, ' Trains': " " + train_names, ' Rooms/First from': " " + rooms_from}
+                        opt_data = {'Date': new_date, 'Trains': train_names, 'Rooms/First from': rooms_from}
                         opt_results.append(opt_data)
                     if rooms_from == 'None':
-                        opt_data = {'Date': new_date, ' Trains': " " + train_names, ' Rooms/First from': " " + business_from}
+                        opt_data = {'Date': new_date, 'Trains': train_names, 'Rooms/First from': business_from}
                         opt_results.append(opt_data)
 
                 if trains_only == 'False':
@@ -244,16 +245,16 @@ if __name__ == '__main__':
     min_list = []
     min_dates = []
     for i in range(0, len(opt_results)):
-        if opt_results[i][' Rooms/First from'] != ' None' and opt_results[i][' Rooms/First from'] != ' Sold out':
-            min_list.append(int(opt_results[i][' Rooms/First from'].replace("$", "")))
+        if opt_results[i]['Rooms/First from'] != 'None' and opt_results[i]['Rooms/First from'] != 'Sold out':
+            min_list.append(int(opt_results[i]['Rooms/First from'].replace("$", "")))
     if min_list:
         min_value = min(min_list)
         for data_set in opt_results:
-            if data_set[' Rooms/First from'] != ' None' and data_set[' Rooms/First from'] != ' Sold out':
-                if int(data_set[' Rooms/First from'].replace("$", "")) == min_value:
+            if data_set['Rooms/First from'] != 'None' and data_set['Rooms/First from'] != 'Sold out':
+                if int(data_set['Rooms/First from'].replace("$", "")) == min_value:
                     min_dates.append(data_set)
     else:
-        min_dates.append({' Rooms/First from': ' Sold out'})
+        min_dates.append({'Rooms/First from': 'Sold out'})
 
     # Save results in a csv flie
     keys = results[0].keys()

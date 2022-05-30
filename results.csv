@@ -1,7 +1,7 @@
 Title,Date,Depart time,Travel time,Arrive time,Coach from,Business from,Rooms from,Train names
-Multiple Trains,6/20/2022,6:50a,35h 45m 2 Segment,"6:35pTue, Jun 21",$424,$548,$997,"95 Northeast Regional, 91 Silver Star"
-Multiple Trains,6/20/2022,6:38a,35h 57m 2 Segment,"6:35pTue, Jun 21",None,$700,$1297,"2153 Acela, 91 Silver Star"
-Multiple Trains,6/21/2022,6:50a,35h 45m 2 Segment,"6:35pWed, Jun 22",$324,$448,$893,"95 Northeast Regional, 91 Silver Star"
-Multiple Trains,6/21/2022,6:38a,35h 57m 2 Segment,"6:35pWed, Jun 22",None,$600,$1119,"2153 Acela, 91 Silver Star"
-Multiple Trains,6/22/2022,6:50a,35h 45m 2 Segment,"6:35pThu, Jun 23",$324,$448,$828,"95 Northeast Regional, 91 Silver Star"
-Multiple Trains,6/22/2022,6:38a,35h 57m 2 Segment,"6:35pThu, Jun 23",None,$600,$1054,"2153 Acela, 91 Silver Star"
+Multiple Trains,6/20/2022,6:50a,35h 45m 2 Segment,"6:35p Tue, Jun 21",$424,$548,$997,"95 Northeast Regional, 91 Silver Star"
+Multiple Trains,6/20/2022,6:38a,35h 57m 2 Segment,"6:35p Tue, Jun 21",None,$700,$1297,"2153 Acela, 91 Silver Star"
+Multiple Trains,6/21/2022,6:50a,35h 45m 2 Segment,"6:35p Wed, Jun 22",$324,$448,$893,"95 Northeast Regional, 91 Silver Star"
+Multiple Trains,6/21/2022,6:38a,35h 57m 2 Segment,"6:35p Wed, Jun 22",None,$600,$1119,"2153 Acela, 91 Silver Star"
+Multiple Trains,6/22/2022,6:50a,35h 45m 2 Segment,"6:35p Thu, Jun 23",$324,$448,$828,"95 Northeast Regional, 91 Silver Star"
+Multiple Trains,6/22/2022,6:38a,35h 57m 2 Segment,"6:35p Thu, Jun 23",None,$600,$1054,"2153 Acela, 91 Silver Star"
