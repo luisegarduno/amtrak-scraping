@@ -208,8 +208,6 @@ if __name__ == '__main__':
                     grab_names()
                 elif trains_only == 'True' and title != 'Mixed Service':
                     grab_names()
-                else:
-                    pass
 
     new_date = start_date
     get_results_for_a_date()
